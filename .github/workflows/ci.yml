@@ -37,6 +37,12 @@ jobs:
       - name: Run tests
         env:
           PYTHONPYCACHEPREFIX: "${{ github.workspace }}/.pycache"
+          # Some modules validate config during import/collection in CI.
+          # Keep these values deterministic for test runs.
+          ZENAUTH_SECRET_KEY: "**TEST**"
+          ZENAUTH_AUTH_SERVER_ORIGIN: "http://testserver"
+          # Default DSN for server-side config (tests may override per-case).
+          ZENAUTH_SERVER_DSN: "sqlite+pysqlite:///:memory:"
         run: |
           python -m pytest
 
