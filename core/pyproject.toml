@@ -1,0 +1,34 @@
+[build-system]
+requires = ["setuptools>=68", "wheel"]
+
+[project]
+name = "ZenAuth"
+version = "0.1.0"
+description = "A user authentication and management library."
+readme = "README.md"
+requires-python = ">=3.10"
+license = "MIT"
+license-files = ["LICENSE"]
+authors = [{ name = "Yusuke KITAGAWA", email = "tonosama_kaeru@icloud.com" }]
+dependencies = [
+    "zenhtml",
+    "pyyaml",
+    "passlib[bcrypt]",
+    "sqlalchemy",
+    "typing-extensions",
+    "fastapi",
+    "pydantic",
+    "pydantic-settings",
+    "requests",
+    "python-jose",
+    "python-dotenv",
+    "bcrypt<4.0.0",
+    "uvicorn",
+    "python-multipart",
+]
+
+[project.urls]
+Homepage = "https://github.com/MeiRakuPapa/ZenAuth"
+
+[tool.setuptools]
+packages = { find = { where = ["src"], namespaces = true } }

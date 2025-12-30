@@ -1,0 +1,39 @@
+# Byte-compiled / cached files
+__pycache__/
+*.py[cod]
+*$py.class
+
+# Virtual environments
+.venv/
+venv/
+
+# Package managers / build artifacts
+build/
+dist/
+*.egg-info/
+
+# Test / coverage artifacts
+.pytest_cache/
+.mypy_cache/
+
+# IDE / editor settings
+.idea/
+.vscode/
+.DS_Store
+pyrightconfig.json
+
+# Misc
+.env
+.env.*
+!.env.example
+!.env.*.example
+.coverage
+.garbage
+.garbage/
+.bak
+.bak/
+coverage.xml
+*.db
+*.sqlite
+*.sqlite3
+*.log

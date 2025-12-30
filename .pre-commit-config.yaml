@@ -1,0 +1,50 @@
+repos:
+  - repo: https://github.com/pre-commit/mirrors-isort
+    rev: v5.10.1
+    hooks:
+      - id: isort
+        args: ["--settings-path=pyproject.toml"]
+
+  - repo: https://github.com/psf/black
+    rev: 24.10.0
+    hooks:
+      - id: black
+
+  - repo: https://github.com/pre-commit/mirrors-mypy
+    rev: v1.13.0
+    hooks:
+      - id: mypy
+        name: mypy (core+server)
+        args: ["--config-file=pyproject.toml", "--namespace-packages", "core/src/zen_auth", "server/src/zen_auth"]
+        additional_dependencies:
+          - fastapi
+          - pydantic
+          - pydantic-settings
+          - sqlalchemy
+          - requests
+          - types-requests
+          - pyyaml
+          - types-PyYAML
+          - typing-extensions
+          - python-dotenv
+          - python-jose
+          - passlib[bcrypt]
+          - bcrypt<4.0.0
+          - python-multipart
+          - uvicorn
+          - zenhtml
+        pass_filenames: false
+
+  - repo: https://github.com/pycqa/flake8
+    rev: 7.1.1
+    hooks:
+      - id: flake8
+        args: ["--config=.flake8"]
+
+  - repo: https://github.com/pre-commit/pre-commit-hooks
+    rev: v4.4.0
+    hooks:
+      - id: check-added-large-files
+      - id: check-merge-conflict
+      - id: end-of-file-fixer
+      - id: trailing-whitespace

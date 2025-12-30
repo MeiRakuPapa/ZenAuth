@@ -1,0 +1,82 @@
+[build-system]
+requires = ["setuptools>=68", "wheel"]
+
+[project]
+name = "ZenAuth-server"
+version = "0.1.0"
+description = "A user authentication and management library."
+readme = "README.md"
+requires-python = ">=3.10"
+license = "MIT"
+license-files = ["LICENSE"]
+authors = [{ name = "Yusuke KITAGAWA", email = "tonosama_kaeru@icloud.com" }]
+dependencies = [
+    "ZenAuth",
+    "zenhtml",
+    "pyyaml",
+    "passlib[bcrypt]",
+    "sqlalchemy",
+    "typing-extensions",
+    "fastapi",
+    "pydantic",
+    "pydantic-settings",
+    "requests",
+    "python-jose",
+    "python-dotenv",
+    "bcrypt<4.0.0",
+    "uvicorn",
+    "python-multipart",
+]
+
+[tool.setuptools]
+packages = { find = { where = ["src"], namespaces = true } }
+
+[project.urls]
+Homepage = "https://github.com/MeiRakuPapa/ZenAuth"
+
+[project.optional-dependencies]
+test = [
+    "pytest",
+    "pytest-cov",
+    "pytest-mock",
+    "httpx"
+]
+
+dev = [
+    "autopep8",
+    "black",
+    "debugpy",
+    "flake8",
+    "mypy",
+    "mypy-extensions",
+    "ipython",
+    "build",
+    "twine",
+    "isort",
+    "pre-commit",
+    "faker",
+    "aiosqlite",
+]
+
+[tool.black]
+line-length = 110
+
+[tool.isort]
+profile = "black"
+
+[tool.mypy]
+# plugins = ["pydantic.mypy"]
+strict = true
+ignore_missing_imports = true
+disallow_untyped_calls = true
+disallow_untyped_defs = true
+disallow_incomplete_defs = true
+check_untyped_defs = true
+warn_return_any = true
+warn_unused_ignores = true
+warn_redundant_casts = true
+warn_unreachable = true
+exclude = ["build/.*", "dist/.*", ".*.pyi", ".venv/.*"]
+
+[tool.pytest.ini_options]
+addopts = "--cov --cov-report=xml"

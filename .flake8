@@ -1,0 +1,5 @@
+[flake8]
+ignore = D400,D100,D102,D103,D104,D105,D205,W503,E501,E704
+max-line-length = 120
+max-complexity = 18
+exclude = .venv build dist __pycache__ docs/*,tests/*

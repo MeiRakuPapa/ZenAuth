@@ -1,0 +1,30 @@
+## Repository root is NOT a distributable package.
+## Build/publish is handled by subprojects:
+## - core/ (ZenAuth)
+## - server/ (ZenAuth-server)
+
+[tool.black]
+line-length = 110
+
+[tool.isort]
+profile = "black"
+
+[tool.mypy]
+# plugins = ["pydantic.mypy"]
+strict = true
+ignore_missing_imports = true
+namespace_packages = true
+mypy_path = ["core/src", "server/src"]
+explicit_package_bases = true
+disallow_untyped_calls = true
+disallow_untyped_defs = true
+disallow_incomplete_defs = true
+check_untyped_defs = true
+warn_return_any = true
+warn_unused_ignores = true
+warn_redundant_casts = true
+warn_unreachable = true
+exclude = ["build/.*", "dist/.*", ".*.pyi", ".venv/.*"]
+
+[tool.pytest.ini_options]
+addopts = "--cov --cov-report=xml"

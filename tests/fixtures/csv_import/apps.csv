@@ -1,0 +1,2 @@
+app_id,display_name,description,return_to
+example_webapp,Example WebApp,Demo app,/after_login

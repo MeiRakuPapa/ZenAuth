@@ -1,0 +1,100 @@
+
+.dl-container {
+  display: flex;
+  gap: 12px;
+  align-items: center;
+  margin-top: 4px;
+}
+
+.dl-column {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.dl-list {
+  border: 1px solid #ccc;
+  border-radius: 2px;
+  background: #fff;
+  width: 180px;
+  overflow-y: auto;
+  padding: 1px;
+}
+
+.dl-inner-label {
+  font-size: x-small;
+}
+
+.dl-item {
+  padding: 1px 3px;
+  border-radius: 2px;
+  cursor: pointer;
+  user-select: none;
+  font-size: small;
+}
+
+.dl-item:hover {
+  background: #eef2ff;
+}
+
+.dl-item.selected {
+  background: #dce6ff;
+  border-left: 4px solid #5588ff;
+}
+
+.dl-btn {
+  padding: 2px;
+  border: 1px solid #666;
+  border-radius: 4px;
+  background: #fafafa;
+  cursor: pointer;
+  text-align: center;
+  user-select: none;
+  font-size: small;
+}
+
+.dl-btn:hover {
+  background: #eee;
+}
+
+.user-list-table :not(caption) {
+  font-size: 10pt;
+}
+
+.user-list-table col:nth-child(1) {
+  width: 120px;
+}
+
+.user-list-table col:nth-child(2) {
+  width: 200px;
+}
+
+.user-list-table col:nth-child(3) {
+  width: 250px;
+}
+
+/*
+.user-list-table col:nth-child(4) {
+  width: 300px;
+}
+*/
+
+.user-list-table col:nth-child(5) {
+  width: 200px;
+}
+
+.user-list-table col:last-child {
+  width: 100px;
+}
+
+.table-sm :not(caption) {
+  padding: 0.1rem 0.25rem;
+}
+
+.page {
+  font-size: 10pt;
+}
+
+.page button {
+  padding: 2px 1px;
+}

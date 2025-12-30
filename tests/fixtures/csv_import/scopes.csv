@@ -1,0 +1,3 @@
+scope_name,display_name,description,roles
+read:users,Read Users,Can read users,"admin,viewer"
+write:users,Write Users,Can write users,"admin"
